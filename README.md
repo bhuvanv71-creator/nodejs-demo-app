@@ -1,4 +1,64 @@
-﻿#### \# Task 1: CI/CD Pipeline Using GitHub Actions
+﻿#### Jenkins CI/CD Pipeline for Node.js
+
+#### 
+
+#### Project Overview
+
+#### 
+
+#### This project demonstrates a basic Continuous Integration (CI) pipeline using Jenkins for a Node.js application.
+
+#### 
+
+#### Objective
+
+#### 
+
+#### Automate source code checkout, dependency installation, build checks, and automated testing using Jenkins.
+
+#### 
+
+#### Tools Used
+
+#### 
+
+#### \* Jenkins
+
+#### \* Docker
+
+#### \* Git and GitHub
+
+#### \* Node.js
+
+#### \* npm
+
+#### \* Jenkins Declarative Pipeline
+
+#### 
+
+#### Pipeline Stages
+
+#### 
+
+#### 1\. Checkout: Jenkins retrieves the source code from GitHub.
+
+#### 2\. Install Dependencies: Installs dependencies using npm ci.
+
+#### 3\. Build: Runs the build command if a build script is configured.
+
+#### 4\. Test: Runs automated tests using npm test --if-present
+
+#### 
+
+#### 
+
+#### 
+
+#### 
+
+#### 
+
+#### \# Task 1: CI/CD Pipeline Using GitHub Actions
 
 #### 
 
@@ -131,4 +191,6 @@ npm start
 .github/workflows/main.yml
 
 
+
 ## CI/CD Test - 2026-10-22 17:52:09
+
