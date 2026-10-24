@@ -1,39 +1,37 @@
-pipeline {
-    agent any
-
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-
-        stage('Install Dependencies') {
-            steps {
-                bat 'npm ci'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                bat 'npm run build --if-present'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                bat 'npm test --if-present'
-            }
+stages {
+    stage('Checkout') {
+        steps {
+            echo 'Source code checked out from GitHub'
         }
     }
 
-    post {
-        success {
-            echo 'Pipeline completed successfully!'
+    stage('Install Dependencies') {
+        steps {
+            sh 'node --version'
+            sh 'npm --version'
+            sh 'npm ci'
         }
+    }
 
-        failure {
-            echo 'Pipeline failed. Check the console output.'
+    stage('Build') {
+        steps {
+            sh 'npm run build --if-present'
         }
+    }
+
+    stage('Test') {
+        steps {
+            sh 'npm test --if-present'
+        }
+    }
+}
+
+post {
+    success {
+        echo 'Pipeline completed successfully!'
+    }
+
+    failure {
+        echo 'Pipeline failed. Check the console output.'
     }
 }
